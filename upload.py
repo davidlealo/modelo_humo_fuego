@@ -1,7 +1,11 @@
 from roboflow import Roboflow
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Initialize the Roboflow object with your API key
-rf = Roboflow(api_key="YOUR_PRIVATE_API_KEY")
+rf = Roboflow(api_key=os.getenv("roboflow_api_key"))
 
 # Retrieve your current workspace and project name
 print(rf.workspace())
